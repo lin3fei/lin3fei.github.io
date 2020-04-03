@@ -1,10 +1,10 @@
 # Site settings
-title: LF Blog
+title: 有你有情的博客
 SEOTitle: 有你有情的博客 | LF Blog
 header-img: img/post-bg-desk.jpg
 email: lin3fei@126.com
 description: "Every failure is leading towards success."
-keyword: "LF, LF Blog, 有你有情的博客, 有你有情, Java, Spring, Mysql"
+keyword: "LF, LF Blog, 有你有情的博客, 有你有情, Java, Spring, Spring Cloud, Mysql"
 url: "http://lin3fei.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/lin3fei/lin3fei.github.io.git" # you code repository
@@ -33,7 +33,7 @@ github_username:    lin3fei
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: true    # if you want to customize anchor. check out line:181 of `post.html`
 
 
 
@@ -51,7 +51,7 @@ gems: [jekyll-paginate]
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  input: GFM         # use Github Flavored Markdown !important
 
 
 
@@ -99,16 +99,31 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Gitee",
+        href: "http://gitee.com"
     },{
         title: "简书·BY",
         href: "http://www.jianshu.com/u/e71990ada2fd"
     },{
+        title: "Deepin",
+        href: "https://www.deepin.org/"
+    },{
         title: "Apple",
-        href: "https://apple.com"
+        href: "https://www.apple.com.cn"
     },{
         title: "Apple Developer",
         href: "https://developer.apple.com/"
+    },{
+        title: "Apple Developer",
+        href: "https://developer.apple.com/"
+    },{
+        title: "JDK",
+        href: "https://www.oracle.com/java/technologies/javase-downloads.html"
+    },{
+        title: "IntelliJ IDEA",
+        href: "https://www.jetbrains.com/idea/"
+    },{
+        title: "Spring",
+        href: "https://spring.io/"
     }
 ]
