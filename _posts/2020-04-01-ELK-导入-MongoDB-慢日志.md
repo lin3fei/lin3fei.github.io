@@ -29,8 +29,7 @@ tags:
 
 再看看整体的时序图:
 
-```
-sequenceDiagram
+```sequence
 User->>Kibana: 查询mongodb慢日志（请求）
 Kibana->>Elasticsearch: Search Api
 Logstash->>Elasticsearch: 存入mongo慢日志
