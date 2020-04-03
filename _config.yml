@@ -61,7 +61,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
+  enable: true    #是否开启Gitalk评论
   clientID: 822571a07c9b8ed25e19                            #生成的clientID
   clientSecret: 2d4e843c7a9479c537b81aebacdb96916d9680f9    #生成的clientSecret
   repo: lin3fei.github.io    #仓库名称

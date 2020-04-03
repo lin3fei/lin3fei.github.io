@@ -23,7 +23,7 @@ tags:
 
 先看图，在Kibana中查询的结果:
 
-![](https://raw.githubusercontent.com/lin3fei/qiubaiying.github.io/master/img/post-bg-elasticsearch-kibana.png)
+![](https://raw.githubusercontent.com/lin3fei/lin3fei.github.io/master/img/post-bg-elasticsearch-kibana.png)
 
 图中分别有index、mongo操作类型、mongo操作数据库及集合、耗时、消息以及读取时间
 
@@ -81,7 +81,7 @@ http.port: 9200
 
 打开浏览器，输入 [地址](http://192.168.104.225:9200)，显示为下图片则启动成功
 
-![](https://raw.githubusercontent.com/lin3fei/qiubaiying.github.io/master/img/post-bg-elasticsearch-9200.png)
+![](https://raw.githubusercontent.com/lin3fei/lin3fei.github.io/master/img/post-bg-elasticsearch-9200.png)
 
 #### Kibana
 
@@ -120,7 +120,7 @@ elasticsearch.url: "http://192.168.104.225:9200"
 
 打开浏览器，输入 [地址](http://192.168.104.225:5601/)，显示为下图则启动成功
 
-![](https://raw.githubusercontent.com/lin3fei/qiubaiying.github.io/master/img/post-bg-elasticsearch-5601.png)
+![](https://raw.githubusercontent.com/lin3fei/lin3fei.github.io/master/img/post-bg-elasticsearch-5601.png)
 
 #### Logstash
 
