@@ -155,24 +155,24 @@ filter {
     if [component] =~ "WRITE" {
       if "appName" in [body] {
         grok {
-          match => ["body","%{WORD:command_type}\s+%{DATA:database}\s+%{WORD:appname_key}\:\s+\"%{DATA:appname_value}\"\s+\w+\:\s+%{GREEDYDATA:message}\s+%{INT:duration}ms$"]
+          match => ["body","%{WORD:command_type}\s+%{DATA:database}\s+%{WORD:appname_key}\:\s+\"%{DATA:appname_value}\"\s+\w+\:\s+%{GREEDYDATA:message}\s+%{INT:duration:int}ms$"]
           remove_field => [ "body", "appname_key", "appname_value" ]
         }
       } else {
         grok {
-          match => ["body","%{WORD:command_type}\s+%{DATA:database}\s+\w+\:\s+%{GREEDYDATA:message}\s+%{INT:duration}ms$"]
+          match => ["body","%{WORD:command_type}\s+%{DATA:database}\s+\w+\:\s+%{GREEDYDATA:message}\s+%{INT:duration:int}ms$"]
           remove_field => [ "body" ]
         }
       }
     } else {
       if "appName" in [body] {
         grok {
-          match => ["body","%{WORD:command}\s+%{DATA:database}\s+%{WORD:appname_key}\:\s+\"%{DATA:appname_value}\"\s+\w+\:\s+%{WORD:command_type}\s+%{GREEDYDATA:message}\s+%{INT:duration}ms"]
+          match => ["body","%{WORD:command}\s+%{DATA:database}\s+%{WORD:appname_key}\:\s+\"%{DATA:appname_value}\"\s+\w+\:\s+%{WORD:command_type}\s+%{GREEDYDATA:message}\s+%{INT:duration:int}ms"]
           remove_field => [ "body", "command", "appname_key", "appname_value" ]
         }
       } else {
         grok {
-          match => ["body","%{WORD:command}\s+%{DATA:database}\s+\w+\:\s+%{WORD:command_type}\s+%{GREEDYDATA:message}\s+%{INT:duration}ms"]
+          match => ["body","%{WORD:command}\s+%{DATA:database}\s+\w+\:\s+%{WORD:command_type}\s+%{GREEDYDATA:message}\s+%{INT:duration:int}ms"]
           remove_field => [ "body", "command" ]
         }
       }
@@ -181,13 +181,6 @@ filter {
       match => ["timestamp", "MMMM dd yyyy, HH:mm:ss.SSS", "ISO8601"]
       target => "@timestamp"
     }
-  }
-}
-
-output {
-  elasticsearch {
-    hosts => ["http://192.168.104.225:9200"]
-    index => "mongo-slowlog-%{+YYYY.MM.dd}"
   }
 }
 ```
