@@ -183,6 +183,13 @@ filter {
     }
   }
 }
+
+output {
+  elasticsearch {
+    hosts => ["http://192.168.104.225:9200"]
+    index => "mongo-slowlog-%{+YYYY-MM-dd}"
+  }
+}
 ```
 
 启动及查看状态
