@@ -29,7 +29,7 @@ tags:
 
 再看看整体的时序图:
 
-```sequence
+```seq
 User->>Kibana: 查询mongodb慢日志（请求）
 Kibana->>Elasticsearch: Search Api
 Logstash->>Elasticsearch: 存入mongo慢日志
@@ -63,6 +63,9 @@ path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
 network.host: 0.0.0.0
 http.port: 9200
+# 跨域设置
+http.cors.enabled: true
+http.cors.allow-origin: "*"
 ```
 
 启动及查看状态
