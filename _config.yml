@@ -18,12 +18,12 @@ sidebar-avatar: /img/avatar_m.jpg
 
 # SNS settings
 RSS: false
-#weibo_username:     lin3fei
-#zhihu_username:     lin3fei
+weibo_username:     lin3fei
+zhihu_username:     lin3fei
 github_username:    lin3fei
-#facebook_username:  baiying.qiu.7
-#jianshu_username:   e71990ada2fd
-#twitter_username:   lin3fei
+facebook_username:  fei.lin.3
+jianshu_username:   e71990ada2fd
+twitter_username:   lin3fei
 
 
 
@@ -110,9 +110,6 @@ friends: [
     },{
         title: "Apple",
         href: "https://www.apple.com.cn"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
     },{
         title: "Apple Developer",
         href: "https://developer.apple.com/"
