@@ -18,7 +18,9 @@ tags:
 
 #### 枚举类型使用陷阱
 
-1. 超级不推荐在mysql中设置某一字段类型为enum，但是存的值为数字，比如'0'，'1'，'2'，具体原因如下：
+##### 不推荐
+
+超级不推荐在mysql中设置某一字段类型为enum，但是存的值为数字，比如'0'，'1'，'2'，具体原因及解决
 
 - 你会混淆，因为enum可以通过角标取值，但它的角标是从1开始，对于不熟悉这个字段的人这里会出错
 
@@ -26,9 +28,11 @@ tags:
 
 - enum类型对于php等弱语言类型的支持很差，弱语言类型打引号和不打引号的值可能是同一类型，但是对于mysql中enum类型的字段来说，那就不一定是一回事了
 
-**总结：** 不要拿mysql的enum类型取存一些数字；如果你一定要使用这个字段去存数字，请把这个字段定义为int，然后在java代码中使用枚举类做一个对于这个字段值范围的一个限定
+- **总结：** 不要拿mysql的enum类型取存一些数字；如果你一定要使用这个字段去存数字，请把这个字段定义为int，然后在java代码中使用枚举类做一个对于这个字段值范围的一个限定
 
-2. 你可能会报这个错——Caused by: java.sql.SQLException: Data truncated for column 'Color' at row 1，原因如下
+##### 报错
+ 
+你可能会报这个错——Caused by: java.sql.SQLException: Data truncated for column 'Color' at row 1，原因及解决
 
 - Jpa默认使用整数顺序值持久化枚举类型
 
@@ -36,7 +40,7 @@ tags:
 
 - 意思就是我们这里存往数据库的数据是0、1、2这样的数字，而不是RED、GREEN、BLUE字符串， 但是Mysql数据库中定义的是RED、GREEN、BLUE，并没有其它值所以报错
 
-**解决：** 在entity中使用@Enumerated(EnumType.STRING)标注你的枚举类型属性，如果标注，默认是Integer
+- **解决：** 在entity中使用@Enumerated(EnumType.STRING)标注你的枚举类型属性，如果标注，默认是Integer
 
 #### 使用例子
 
@@ -110,7 +114,34 @@ create table user (
 
 ```
 public enum Sex {
-    MALE(1, "男"), FEMALE(0, "女")
+
+    MALE(1, "男"), FEMALE(0, "女");
+
+    private Integer code;
+
+    private String sex;
+
+    private Sex(Integer code, String sex) {
+        this.code = code;
+        this.sex = sex;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
 }
 ```
 
